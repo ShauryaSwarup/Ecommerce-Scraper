@@ -18,7 +18,6 @@ class FlipkartSpider(scrapy.Spider):
 
     custom_settings = {
         'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter',
-        'FEEDS': {'final-flipkart-amazon-data.json': {'format': 'json', 'overwrite': 'True'}}
     }
 
     object = data[i]
@@ -43,10 +42,14 @@ class FlipkartSpider(scrapy.Spider):
         details = mobileDetails()
         object = data[FlipkartSpider.i]
         titles = response.css('div._4rR01T::text').getall()
-        flipkart_urls = response.css('div._13oc-S>div>div._2kHMtA > a._1fQZEK::attr(href)').getall()
-        flipkart_prices = response.css('div._25b18c>div._30jeq3::text').getall()
-        flipkart_star_ratings = response.css('span > div._3LWZlK::text').getall()
-        flipkart_no_ratings = response.css('span._2_R_DZ>span>span::text').getall()
+        flipkart_urls = response.css(
+            'div._13oc-S>div>div._2kHMtA > a._1fQZEK::attr(href)').getall()
+        flipkart_prices = response.css(
+            'div._25b18c>div._30jeq3::text').getall()
+        flipkart_star_ratings = response.css(
+            'span > div._3LWZlK::text').getall()
+        flipkart_no_ratings = response.css(
+            'span._2_R_DZ>span>span::text').getall()
 
         details['flipkart_url'] = None
         details['flipkart_price'] = None
@@ -58,10 +61,13 @@ class FlipkartSpider(scrapy.Spider):
         for title in titles:
             try:
                 if (re.search(object['model_name'], title, re.IGNORECASE)):
-                    details['flipkart_url'] = "https://www.flipkart.com" + flipkart_urls[j]
-                    details['flipkart_price'] = flipkart_prices[j].strip('\u20b9')
+                    details['flipkart_url'] = "https://www.flipkart.com" + \
+                        flipkart_urls[j]
+                    details['flipkart_price'] = flipkart_prices[j].strip(
+                        '\u20b9')
                     details['flipkart_star_rating'] = flipkart_star_ratings[j].strip()
-                    details['flipkart_no_rating'] = flipkart_no_ratings[j].strip('\xa0')
+                    details['flipkart_no_rating'] = flipkart_no_ratings[j].strip(
+                        '\xa0')
                     yield (details)
                     break
                 else:
