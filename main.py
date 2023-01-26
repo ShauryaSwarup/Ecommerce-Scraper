@@ -15,21 +15,20 @@ def main():
 
     def crawl(props):
         return crawler.crawl(props)
+
     def jsonassemble():
         JSONAssembling.jsonassemblefunc()
 
+    def stopreactor():
+        return reactor.stop()
+
     reactor.callLater(2, crawl, AmazonSpiderSpider)
     reactor.callLater(30, jsonassemble, )
-    reactor.callLater(40, crawl, FlipkartSpider)
+    # reactor.callLater(40, crawl, FlipkartSpider)
+    reactor.callLater(40, stopreactor,)
 
     reactor.run()
-    reactor.stop()
-    return 0
+
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
