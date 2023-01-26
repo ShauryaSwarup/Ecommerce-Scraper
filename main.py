@@ -24,8 +24,8 @@ def main():
 
     reactor.callLater(2, crawl, AmazonSpiderSpider)
     reactor.callLater(30, jsonassemble, )
-    # reactor.callLater(40, crawl, FlipkartSpider)
-    reactor.callLater(40, stopreactor,)
+    reactor.callLater(40, crawl, FlipkartSpider)
+    reactor.callLater(480, stopreactor,)
 
     reactor.run()
 
