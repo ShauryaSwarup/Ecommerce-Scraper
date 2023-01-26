@@ -1,0 +1,4 @@
+itemadapter==0.7.0
+Scrapy==2.7.1
+scrapy_selenium==0.0.7
+Twisted==22.10.0
