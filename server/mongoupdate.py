@@ -9,9 +9,11 @@ records = db.products
 with open('/home/shaun/Desktop/Ecommerce-Scraper/final-flipkart-amazon-data.json', 'r') as json_file:
     data = json.loads(json_file.read())
 
-if isinstance(data, list):
-    records.delete_many({})
-    records.insert_many(data)
-else:
-    records.delete_many({})
-    records.insert_one(data)
+print(len(data))
+if (len(data) >= 230):
+    if isinstance(data, list):
+        records.delete_many({})
+        records.insert_many(data)
+    else:
+        records.delete_many({})
+        records.insert_one(data)
