@@ -13,6 +13,18 @@ To install the project, follow these steps:
 ## Usage
 Ecommerce-Scraper can be used to scrape data from Amazon and Flipkart websites and you can export the data in json format.
 
+## Why Scrapy
+Scrapy is a highly efficient library. It's an open-source collaborative framework for extracting the data we need from websites. It has a quick response time. Scrapy includes support for extracting data from HTML or XML sources using CSS and XPath expressions.
+
+Scrapy is a full-fledged web scraper framework. You can start scraping by providing Scrapy with a root URL, then specifying how many URLs you want to crawl and fetch, and so on.
+
+- It is easily extensible.
+- It has built-in support for extracting data.
+- It has very fast speed compared to other libraries.
+- It is both memory and CPU efficient.
+- You can also build robust and extensive applications.
+- Has strong community support.
+
 ## Features
 - Scrapes product details such as name, price, image URL and many more details
 - Can be scheduled to run on a daily basis using a cloud service
