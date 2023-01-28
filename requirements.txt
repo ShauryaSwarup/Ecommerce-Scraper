@@ -1,4 +1,4 @@
-itemadapter==0.7.0
+itemadapter==0.4.0
+pymongo==4.3.3
 Scrapy==2.7.1
-scrapy_selenium==0.0.7
-Twisted==22.10.0
+Twisted==22.1.0
