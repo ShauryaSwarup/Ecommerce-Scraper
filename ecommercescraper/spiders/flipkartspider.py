@@ -1,10 +1,10 @@
 import scrapy
-from scrapy_selenium import SeleniumRequest
+from scrapy import Request
 from ..items import mobileDetails
 import json
 import re
 
-json_file_path = "/home/shaun/PycharmProjects/ECommerceScraper/amazon-assembled.json"
+json_file_path = "/home/shaun/Desktop/Ecommerce-Scraper/amazon-assembled.json"
 with open(json_file_path, 'r') as j:
     data = json.loads(j.read())
 
@@ -32,7 +32,7 @@ class FlipkartSpider(scrapy.Spider):
     url = url + search_query
 
     def start_requests(self):
-        yield SeleniumRequest(
+        yield Request(
             url=FlipkartSpider.url,
             callback=self.parse
         )
@@ -110,7 +110,7 @@ class FlipkartSpider(scrapy.Spider):
 
             FlipkartSpider.url = 'https://www.flipkart.com/search?q=' + search_query
 
-            yield SeleniumRequest(
+            yield Request(
                 url=FlipkartSpider.url,
                 callback=self.parse
             )
