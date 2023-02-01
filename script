@@ -1,0 +1,5 @@
+#!/bin/bash
+scrapy crawl amazon_spider
+python3 JSONAssembler/JSONAssembling.py
+scrapy crawl flipkart
+python3 server/mongoupdate.py
