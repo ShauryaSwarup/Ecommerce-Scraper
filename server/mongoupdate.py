@@ -14,6 +14,10 @@ if (len(data) >= 230):
     if isinstance(data, list):
         records.delete_many({})
         records.insert_many(data)
+        print("Success")
     else:
         records.delete_many({})
         records.insert_one(data)
+        print("Success")
+else:
+    print("Fail")
