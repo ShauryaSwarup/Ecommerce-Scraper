@@ -10,7 +10,7 @@ class AmazonSpiderSpider(scrapy.Spider):
     allowed_domains = ['amazon.in']
     url = 'https://www.amazon.in/Today-Mobile-Offer/s?k=Today+Mobile+Offer'
     count = 1
-    API = "e6f73cfd4908bd158531c8ac7978c3b5"
+    API = "YOUR-SCRAPERAPI-KEY"
 
     def get_url(url):
         payload = {'api_key': AmazonSpiderSpider.API,
