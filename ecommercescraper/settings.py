@@ -7,7 +7,7 @@ NEWSPIDER_MODULE = 'ecommercescraper.spiders'
 CONCURRENT_REQUESTS = 5
 RETRY_TIMES = 5
 
-SCRAPEOPS_API_KEY = '946d5e2b-a69d-4402-b1f9-6236805fb7fc'
+SCRAPEOPS_API_KEY = 'cc43223f-78f3-4295-90c1-9c5e8b631c66'
 
 # Add In The ScrapeOps Extension
 EXTENSIONS = {
